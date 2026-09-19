@@ -19,9 +19,8 @@
 
   const titleblock = p => `
     <div class="titleblock">
-      <div><small>Project</small><b>${esc(p.title)}</b></div>
       <div><small>Type</small><b>${esc(p.type || "—")}</b></div>
-      <div><small>Tools</small><b>${esc(p.tools || "—")}</b></div>
+      <div><small>Skills</small><b>${esc(p.skills || "—")}</b></div>
       <div><small>Year</small><b>${esc(p.year || "—")}</b></div>
     </div>`;
 
@@ -29,7 +28,14 @@
   if ($("#projects")) {
     document.title = `${S.name} | Engineering Portfolio`;
     set("#headline", esc(S.headline));
-    set("#intro", esc(S.intro) + (S.location ? ` Based in ${esc(S.location)}.` : ""));
+    const initials = (S.name || "").split(/\s+/).map(w => w[0] || "").join("").slice(0, 2).toUpperCase();
+    const fallback = `<span>${esc(initials)}</span>`;
+    set("#headshot", S.headshot
+      ? `<img src="${esc(S.headshot)}" alt="${esc(S.name)}" onerror="this.parentNode.innerHTML=this.parentNode.dataset.fallback" >`
+      : fallback);
+    if ($("#headshot")) $("#headshot").dataset.fallback = fallback;
+    set("#intro", esc(S.intro));
+    set("#loc", S.location ? `Based in ${esc(S.location)}` : "");
     set("#about-text", (S.about || []).map(p => `<p>${esc(p)}</p>`).join(""));
     set("#links", (S.links || []).map((l, i) =>
       `<a class="btn${i === 0 ? " primary" : ""}" href="${esc(l.url)}">${esc(l.label)}</a>`).join(""));
@@ -40,10 +46,10 @@
       <a class="sheet" href="project.html?id=${encodeURIComponent(p.id)}">
         <div class="figure">${figure(p.cover, p.title)}</div>
         <div class="body">
-          <span class="sheet-no">Sheet ${i + 1} of ${projects.length}</span>
+          <span class="sheet-no">${String(i + 1).padStart(2, "0")}</span>
           <h3>${esc(p.title)}</h3>
           <p>${esc(p.summary)}</p>
-          <span class="more">Read the case study</span>
+          <span class="more">More on this project &rarr;</span>
         </div>
         ${titleblock(p)}
       </a>`).join("")

@@ -4,12 +4,13 @@
    ===================================================================== */
 
 window.SITE = {
-  name: "Your Name",
-  initials: "Y. Name",
-  headline: "Mechanical and mechatronics design",   // shown on the dimension line under your name
-  intro: "One or two sentences on what you design and build.",
+  name: "Leith Rigby",
+  initials: "L. Rigby",
+  headline: "Mechanical engineering student",   // shown on the dimension line under your name
+  intro: "Designing and Building Awesome Things",
   location: "Kelowna, BC",
-  resume: "resume.pdf",                              // put the file in this folder, or set to "" to hide
+  headshot: "",                                      // e.g. "assets/headshot.jpg" (portrait, 4:5, ~600 px wide); "" shows your initials
+  resume: "resume.pdf",                             // put the file in this folder, or set to "" to hide
 
   about: [
     "A short paragraph on your background and program.",
@@ -43,7 +44,7 @@ window.SITE = {
       summary: "One sentence on what it is.",
       cover: "assets/projects/my-project.jpg",   // main image; leave "" for a placeholder
       type: "Team",                              // Team, Personal, Work, Course...
-      tools: "SolidWorks, Arduino",
+      skills: "CAD, Arduino, Machining",         // skills this project demonstrates
       year: "2026",
 
       // Case study sections, shown in this order on the project page.
@@ -72,6 +73,18 @@ window.SITE = {
       ]
     },
     */
+
+    // PLACEHOLDERS: titles only. Fill in summary, cover, type, skills, year and sections for each.
+    { id: "go-kart",             title: "Go Kart",             summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "dropper-device",      title: "Dropper Device",      summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "high-speed-auv",      title: "High-Speed AUV",      summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "night-vision-goggles", title: "Night Vision Goggles", summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "potato-cannon",       title: "Potato Cannon",       summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "flamethrower",        title: "Flamethrower",        summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "hidden-bookshelf",    title: "Hidden Bookshelf",    summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "alarm",               title: "Alarm",               summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "chainsaw-bike",       title: "Chainsaw Bike",       summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] }
 
   ]
 };
