@@ -9,7 +9,7 @@ window.SITE = {
   headline: "Mechanical engineering student",   // shown on the dimension line under your name
   intro: "Designing and Building Awesome Things",
   location: "Kelowna, BC",
-  headshot: "",                                      // e.g. "assets/headshot.jpg" (portrait, 4:5, ~600 px wide); "" shows your initials
+  headshot: "assets/headshot.jpg",                   // portrait 4:5 works best (~600 px wide); "" shows your initials
   resume: "resume.pdf",                             // put the file in this folder, or set to "" to hide
 
   about: [
@@ -75,16 +75,21 @@ window.SITE = {
     */
 
     // PLACEHOLDERS: titles only. Fill in summary, cover, type, skills, year and sections for each.
-    { id: "go-kart",             title: "Go Kart",             summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "dropper-device",      title: "Dropper Device",      summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "high-speed-auv",      title: "High-Speed AUV",      summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "night-vision-goggles", title: "Night Vision Goggles", summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "potato-cannon",       title: "Potato Cannon",       summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "flamethrower",        title: "Flamethrower",        summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "hidden-bookshelf",    title: "Hidden Bookshelf",    summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "alarm",               title: "Alarm",               summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "chainsaw-bike",       title: "Chainsaw Bike",       summary: "Description coming soon.", cover: "", type: "", skills: "",year: "", sections: [], results: [], gallery: [], links: [] }
+    { id: "go-kart",             title: "Go Kart",             summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "dropper-device",      title: "Dropper Device",      summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], links: [],
+      gallery: [
+        { src: "assets/projects/dropper-device-side.png",    caption: "Side view" },
+        { src: "assets/projects/dropper-device-drawing.png", caption: "Dimensioned drawing (Ver. 4)" }
+      ] },
+    { id: "high-speed-auv",      title: "High-Speed AUV",      summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], links: [],
+      gallery: [{ src: "assets/projects/high-speed-auv-mk1.png", caption: "MK1" }] },
+    { id: "night-vision-goggles", title: "Night Vision Goggles", summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "potato-cannon",       title: "Potato Cannon",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "flamethrower",        title: "Flamethrower",        summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "hidden-bookshelf",    title: "Hidden Bookshelf",    summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "alarm",               title: "Alarm",               summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "chainsaw-bike",       title: "Chainsaw Bike",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] }
 
   ]
 };
