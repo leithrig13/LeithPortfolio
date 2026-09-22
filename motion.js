@@ -6,6 +6,7 @@
   // Reveal on scroll
   const targets = document.querySelectorAll(
     "#work .sec-head, .stone-top, .hero-mid, .hero-bottom, .sheet, .empty, .about > div, " +
+    "#credentials .sec-head, .credentials > div, " +
     ".back, .p-head, .results, .case section, .gallery figure, #project > .btns, .next"
   );
   targets.forEach(el => el.classList.add("reveal"));

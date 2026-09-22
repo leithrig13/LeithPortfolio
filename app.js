@@ -13,9 +13,10 @@
   if (!S.resume) document.querySelectorAll("[data-resume]").forEach(el => el.remove());
   else document.querySelectorAll("[data-resume]").forEach(el => el.href = S.resume);
 
+  const placeholderIcon = `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-4 4-3-3-6 6"/></svg>`;
   const figure = (src, alt) => src
-    ? `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" onerror="this.outerHTML='<div class=&quot;placeholder&quot;><span>Image not found: ${esc(src)}</span></div>'">`
-    : `<div class="placeholder"><span>Add an image</span></div>`;
+    ? `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" onerror="this.outerHTML='<div class=&quot;placeholder&quot;>${placeholderIcon}<span>Image not found: ${esc(src)}</span></div>'">`
+    : `<div class="placeholder">${placeholderIcon}<span>Add an image</span></div>`;
 
   const titleblock = p => `
     <div class="titleblock">
@@ -41,6 +42,22 @@
       `<a class="btn${i === 0 ? " primary" : ""}" href="${esc(l.url)}">${esc(l.label)}</a>`).join(""));
     set("#skills", (S.skills || []).map(s =>
       `<div><b>${esc(s.group)}</b><span>${esc(s.items)}</span></div>`).join(""));
+
+    const certifications = S.certifications || [];
+    set("#certifications", certifications.length
+      ? certifications.map(c => `
+        <div class="cert"><b>${esc(c.name)}</b><span>${esc([c.issuer, c.year].filter(Boolean).join(" · "))}</span></div>`).join("")
+      : `<div class="empty small"><p>Add certifications in <code>content.js</code>.</p></div>`);
+
+    const experience = S.experience || [];
+    set("#experience", experience.length
+      ? experience.map(e => `
+        <div class="exp">
+          <div class="exp-top"><b>${esc(e.role)}</b><span>${esc(e.period || "")}</span></div>
+          ${e.org ? `<div class="exp-org">${esc(e.org)}</div>` : ""}
+          ${e.text ? `<p>${esc(e.text)}</p>` : ""}
+        </div>`).join("")
+      : `<div class="empty small"><p>Add roles and experience in <code>content.js</code>.</p></div>`);
 
     set("#projects", projects.length ? projects.map((p, i) => `
       <a class="sheet" href="project.html?id=${encodeURIComponent(p.id)}">

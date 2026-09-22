@@ -30,6 +30,16 @@ window.SITE = {
     { group: "Software",    items: "Skill, skill, skill" }
   ],
 
+  // Licenses, courses, safety tickets, awards.
+  certifications: [
+    /* { name: "WHMIS", issuer: "WorkSafeBC", year: "2025" }, */
+  ],
+
+  // Internships, competitions, leadership roles, notable jobs.
+  experience: [
+    /* { role: "Team Lead", org: "Okanagan Marine Robotics", period: "2024–Present", text: "One or two sentences on what you did." }, */
+  ],
+
   /* -------------------------------------------------------------------
      PROJECTS: listed on the homepage in this order (best one first).
      Copy the example below, delete the two comment lines around it (the ones with the slash and star), and fill it in.
@@ -89,7 +99,8 @@ window.SITE = {
     { id: "hidden-bookshelf",    title: "Hidden Bookshelf",    summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
     { id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
     { id: "alarm",               title: "Alarm",               summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "chainsaw-bike",       title: "Chainsaw Bike",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] }
+    { id: "chainsaw-bike",       title: "Chainsaw Bike",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "rocketry-design",     title: "Rocketry Design",     summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] }
 
   ]
 };
