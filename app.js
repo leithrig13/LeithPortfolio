@@ -14,9 +14,21 @@
   else document.querySelectorAll("[data-resume]").forEach(el => el.href = S.resume);
 
   const placeholderIcon = `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-4 4-3-3-6 6"/></svg>`;
-  const figure = (src, alt) => src
-    ? `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" onerror="this.outerHTML='<div class=&quot;placeholder&quot;>${placeholderIcon}<span>Image not found: ${esc(src)}</span></div>'">`
-    : `<div class="placeholder">${placeholderIcon}<span>Add an image</span></div>`;
+  const placeholder = label => `<div class="placeholder">${placeholderIcon}<span>${label}</span></div>`;
+  const figure = (src, alt, w, h) => src
+    ? `<img src="${esc(src)}" alt="${esc(alt)}" ${w > 0 && h > 0 ? `width="${Number(w)}" height="${Number(h)}"` : ""} loading="lazy" data-fallback>`
+    : placeholder("Add an image");
+
+  // Cover frame: the whole photo is shown (never cropped); a blurred copy fills any leftover space.
+  const cover = (p, wide) => `<div class="figure${wide ? " wide" : ""}">${p.cover
+    ? `<img class="backdrop" src="${esc(p.cover)}" alt="" aria-hidden="true" loading="lazy">` : ""}${figure(p.cover, p.title)}</div>`;
+
+  // Swap a missing image for a placeholder. Image errors don't bubble, so listen in the capture phase.
+  document.addEventListener("error", e => {
+    const img = e.target;
+    if (img.tagName === "IMG" && img.hasAttribute("data-fallback"))
+      img.outerHTML = placeholder(`Image not found: ${esc(img.getAttribute("src"))}`);
+  }, true);
 
   const titleblock = p => `
     <div class="titleblock">
@@ -61,7 +73,7 @@
 
     set("#projects", projects.length ? projects.map((p, i) => `
       <a class="sheet" href="project.html?id=${encodeURIComponent(p.id)}">
-        <div class="figure">${figure(p.cover, p.title)}</div>
+        ${cover(p)}
         <div class="body">
           <span class="sheet-no">${String(i + 1).padStart(2, "0")}</span>
           <h3>${esc(p.title)}</h3>
@@ -84,6 +96,21 @@
     }
     document.title = `${p.title} | ${S.name}`;
     const next = projects[(idx + 1) % projects.length];
+
+    // Consecutive photos sharing a `group` (e.g. "MK3") sit together under one version label.
+    const galleryHTML = (p.gallery || []).reduce((groups, g) => {
+      const name = g.group || "";
+      const last = groups[groups.length - 1];
+      if (last && last.name === name) last.items.push(g); else groups.push({ name, items: [g] });
+      return groups;
+    }, []).map(({ name, items }) => {
+      const figs = items.map((g, i) =>
+        `<figure${g.wide || g.w / g.h >= 2.2 ? ' class="wide"' : ""}>${figure(g.src, g.caption || `${p.title}${name ? " " + name : ""}, photo ${i + 1}`, g.w, g.h)}${g.caption ? `<figcaption>${esc(g.caption)}</figcaption>` : ""}</figure>`).join("");
+      return name
+        ? `<div class="version"><h3 class="version-label">${esc(name)}</h3><div class="gallery photos">${figs}</div></div>`
+        : `<div class="gallery">${figs}</div>`;
+    }).join("");
+
     set("#project", `
       <a class="back" href="index.html#work">All projects</a>
       <header class="p-head">
@@ -91,15 +118,14 @@
         <p class="lead">${esc(p.summary)}</p>
       </header>
       <div class="sheet static">
-        <div class="figure wide">${figure(p.cover, p.title)}</div>
+        ${cover(p, true)}
         ${titleblock(p)}
       </div>
       ${(p.results || []).length ? `<div class="results">${p.results.map(r =>
         `<div><b>${esc(r.value)}</b><span>${esc(r.label)}</span></div>`).join("")}</div>` : ""}
       <div class="case">${(p.sections || []).map(s =>
         `<section><h2>${esc(s.heading)}</h2><p>${esc(s.text)}</p></section>`).join("")}</div>
-      ${(p.gallery || []).length ? `<div class="gallery">${p.gallery.map(g =>
-        `<figure>${figure(g.src, g.caption)}<figcaption>${esc(g.caption)}</figcaption></figure>`).join("")}</div>` : ""}
+      ${galleryHTML}
       ${(p.links || []).length ? `<div class="btns">${p.links.map(l =>
         `<a class="btn" href="${esc(l.url)}">${esc(l.label)}</a>`).join("")}</div>` : ""}
       ${projects.length > 1 ? `<a class="next" href="project.html?id=${encodeURIComponent(next.id)}"><small>Next project</small>${esc(next.title)}</a>` : ""}

@@ -73,6 +73,8 @@ window.SITE = {
       ],
 
       // Extra images on the project page (renders, drawings, photos).
+      // Optional: group: "MK1" puts photos under a version label; w/h (pixels) stop the page jumping as images load;
+      // wide: true shows an image across the full row (very wide images do this automatically).
       gallery: [
         { src: "assets/projects/my-project-drawing.png", caption: "Dimensioned drawing" }
       ],
@@ -85,22 +87,51 @@ window.SITE = {
     */
 
     // PLACEHOLDERS: titles only. Fill in summary, cover, type, skills, year and sections for each.
-    { id: "go-kart",             title: "Go Kart",             summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "dropper-device",      title: "Dropper Device",      summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], links: [],
+    { id: "go-kart",             title: "Go Kart",             summary: "Description coming soon.", cover: "assets/projects/go-kart-mk4.jpg", type: "", skills: "", year: "", sections: [], results: [], links: [],
       gallery: [
-        { src: "assets/projects/dropper-device-side.png",    caption: "Side view" },
-        { src: "assets/projects/dropper-device-drawing.png", caption: "Dimensioned drawing (Ver. 4)" }
+        { group: "MK1", src: "assets/projects/go-kart-mk1.jpg",   w: 1600, h: 1200 },
+        { group: "MK2", src: "assets/projects/go-kart-mk2.jpg",   w: 1600, h: 1200 },
+        { group: "MK3", src: "assets/projects/go-kart-mk3-1.jpg", w: 1600, h: 1200 },
+        { group: "MK3", src: "assets/projects/go-kart-mk3-2.jpg", w: 1600, h: 1200 },
+        { group: "MK3", src: "assets/projects/go-kart-mk3-3.jpg", w: 1200, h: 1600 },
+        { group: "MK3", src: "assets/projects/go-kart-mk3-4.jpg", w: 1200, h: 1600 },
+        { group: "MK3", src: "assets/projects/go-kart-mk3-5.jpg", w: 1200, h: 1600 },
+        { group: "MK3", src: "assets/projects/go-kart-mk3-6.jpg", w: 1200, h: 1600 },
+        { group: "MK3", src: "assets/projects/go-kart-mk3-7.jpg", w: 1200, h: 1600 },
+        { group: "MK4", src: "assets/projects/go-kart-mk4.jpg",   w: 1200, h: 1600 },
+        { group: "MK5", src: "assets/projects/go-kart-mk5-1.jpg", w: 1200, h: 1600 },
+        { group: "MK5", src: "assets/projects/go-kart-mk5-2.jpg", w: 1600, h: 1200 },
+        { group: "MK5", src: "assets/projects/go-kart-mk5-3.jpg", w: 1580, h: 1600 },
+        { group: "MK5", src: "assets/projects/go-kart-mk5-4.jpg", w: 1200, h: 1600 },
+        { group: "MK5", src: "assets/projects/go-kart-mk5-5.jpg", w: 1600, h: 1200 }
       ] },
-    { id: "high-speed-auv",      title: "High-Speed AUV",      summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], links: [],
-      gallery: [{ src: "assets/projects/high-speed-auv-mk1.png", caption: "MK1" }] },
-    { id: "night-vision-goggles", title: "Night Vision Goggles", summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "dropper-device",      title: "Dropper Device",      summary: "Description coming soon.", cover: "assets/projects/dropper-device-drawing.png", type: "", skills: "", year: "", sections: [], results: [], links: [],
+      gallery: [
+        { src: "assets/projects/dropper-device-side.png",    caption: "Side view",  w: 1344, h: 844 },
+        { src: "assets/projects/dropper-device-front.png",   caption: "Front view", w: 871,  h: 854 },
+        { src: "assets/projects/dropper-device-drawing.png", caption: "Dimensioned drawing (Ver. 4)", w: 992, h: 775, wide: true }
+      ] },
+    { id: "high-speed-auv",      title: "High-Speed AUV",      summary: "Description coming soon.", cover: "assets/projects/high-speed-auv-iso.png", type: "", skills: "", year: "", sections: [], results: [], links: [],
+      gallery: [
+        { src: "assets/projects/high-speed-auv-mk1.png",   caption: "MK1",            w: 885,  h: 452 },
+        { src: "assets/projects/high-speed-auv-iso.png",   caption: "Isometric view", w: 1313, h: 678 },
+        { src: "assets/projects/high-speed-auv-side.png",  caption: "Side view",      w: 1717, h: 622 },
+        { src: "assets/projects/high-speed-auv-front.png", caption: "End view",       w: 807,  h: 553 }
+      ] },
+    { id: "night-vision-goggles", title: "Night Vision Goggles", summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], links: [],
+      gallery: [{ src: "assets/projects/night-vision-goggles-cad.png", caption: "CAD model", w: 922, h: 1042 }] },
     { id: "potato-cannon",       title: "Potato Cannon",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
     { id: "flamethrower",        title: "Flamethrower",        summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
     { id: "hidden-bookshelf",    title: "Hidden Bookshelf",    summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
     { id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
     { id: "alarm",               title: "Alarm",               summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
     { id: "chainsaw-bike",       title: "Chainsaw Bike",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "rocketry-design",     title: "Rocketry Design",     summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] }
+    { id: "rocketry-design",     title: "Rocketry Design",     summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "laser-engraver",      title: "Laser Engraver",      summary: "Description coming soon.", cover: "assets/projects/laser-engraver-1.jpg", type: "", skills: "", year: "", sections: [], results: [], links: [],
+      gallery: [
+        { src: "assets/projects/laser-engraver-1.jpg", w: 1200, h: 1600 },
+        { src: "assets/projects/laser-engraver-2.jpg", w: 1200, h: 1600 }
+      ] }
 
   ]
 };
