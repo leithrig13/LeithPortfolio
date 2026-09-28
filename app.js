@@ -58,7 +58,13 @@
     const certifications = S.certifications || [];
     set("#certifications", certifications.length
       ? certifications.map(c => `
-        <div class="cert"><b>${esc(c.name)}</b><span>${esc([c.issuer, c.year].filter(Boolean).join(" · "))}</span></div>`).join("")
+        <div class="cert">
+          ${c.badge ? `<img class="cert-badge" src="${esc(c.badge)}" alt="" loading="lazy">` : ""}
+          <div class="cert-body">
+            <div class="cert-head"><b>${esc(c.name)}</b><span>${esc([c.issuer, c.year].filter(Boolean).join(" · "))}</span></div>
+            ${c.id ? `<span class="cert-id">Credential ID ${esc(c.id)}</span>` : ""}
+          </div>
+        </div>`).join("")
       : `<div class="empty small"><p>Add certifications in <code>content.js</code>.</p></div>`);
 
     const experience = S.experience || [];

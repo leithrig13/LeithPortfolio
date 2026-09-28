@@ -162,7 +162,7 @@ a.sheet:hover .figure img:not(.backdrop){transform:scale(1.03)}
 .titleblock{grid-column:1/-1;display:flex;flex-wrap:wrap;margin-top:14px;border-top:1px solid var(--line)}
 .titleblock div{padding:14px 18px 4px 6px;min-width:0;flex:1 1 120px}
 .titleblock small{display:block;font:500 .66rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
-.titleblock b{font:500 1rem var(--sans);display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.titleblock b{font:500 1rem/1.3 var(--sans);display:block}
 
 /* Empty state */
 .empty{border:1px dashed var(--line);background:var(--surface);border-radius:var(--radius);padding:56px 32px;text-align:center}
@@ -184,9 +184,13 @@ a.sheet:hover .figure img:not(.backdrop){transform:scale(1.03)}
 .empty.small{padding:28px 24px}
 .empty.small p{margin:0}
 #certifications{border-top:1px solid var(--line)}
-.cert{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding:16px 0}
+.cert{display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--line);padding:16px 0}
+.cert-badge{width:44px;height:44px;flex:none;object-fit:contain}
+.cert-body{flex:1;min-width:0}
+.cert-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .cert b{font:500 1rem var(--sans)}
 .cert span{flex:none;color:var(--muted);font:500 .68rem var(--sans);letter-spacing:.1em;text-transform:uppercase;text-align:right}
+.cert-id{display:block;margin-top:4px;color:var(--muted);font:400 .78rem var(--sans);letter-spacing:.02em}
 #experience{border-top:1px solid var(--line)}
 .exp{border-bottom:1px solid var(--line);padding:18px 0}
 .exp-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
@@ -260,6 +264,8 @@ footer a:hover{color:var(--ink)}
   .body{padding:22px 12px 8px}
   .about{grid-template-columns:1fr;gap:40px}
   .credentials{grid-template-columns:1fr;gap:40px}
+  .cert-head{flex-direction:column;align-items:flex-start;gap:2px}
+  .cert-head span{text-align:left}
   .version{grid-template-columns:1fr;gap:16px;padding-top:24px}
   .version-label{position:static}
   #skills div{grid-template-columns:1fr;gap:0}

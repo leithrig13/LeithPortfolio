@@ -30,9 +30,11 @@ window.SITE = {
     { group: "Software",    items: "Skill, skill, skill" }
   ],
 
-  // Licenses, courses, safety tickets, awards.
+  // Licenses, courses, safety tickets, awards. badge (optional) is an image in assets/badges/.
   certifications: [
     /* { name: "WHMIS", issuer: "WorkSafeBC", year: "2025" }, */
+    { name: "Certified SOLIDWORKS Professional", issuer: "SolidWorks Designer", year: "2026", id: "C-HNUJG86K5F", badge: "assets/badges/cswp.png" },
+    { name: "Certified SOLIDWORKS Associate",    issuer: "SolidWorks Designer", year: "2026", id: "C-LRNHX7Q54K", badge: "assets/badges/cswa.png" },
   ],
 
   // Internships, competitions, leadership roles, notable jobs.
@@ -87,7 +89,7 @@ window.SITE = {
     */
 
     // PLACEHOLDERS: titles only. Fill in summary, cover, type, skills, year and sections for each.
-    { id: "go-kart",             title: "Go Kart",             summary: "Description coming soon.", cover: "assets/projects/go-kart-mk4.jpg", type: "", skills: "", year: "", sections: [], results: [], links: [],
+    { id: "go-kart",             title: "Go Kart",             summary: "Description coming soon.", cover: "assets/projects/go-kart-mk4.jpg", type: "", skills: "Welding, Fabrication, Mechanical assembly", year: "2019–2021", sections: [], results: [], links: [],
       gallery: [
         { group: "MK1", src: "assets/projects/go-kart-mk1.jpg",   w: 1600, h: 1200 },
         { group: "MK2", src: "assets/projects/go-kart-mk2.jpg",   w: 1600, h: 1200 },
@@ -105,29 +107,33 @@ window.SITE = {
         { group: "MK5", src: "assets/projects/go-kart-mk5-4.jpg", w: 1200, h: 1600 },
         { group: "MK5", src: "assets/projects/go-kart-mk5-5.jpg", w: 1600, h: 1200 }
       ] },
-    { id: "dropper-device",      title: "Dropper Device",      summary: "Description coming soon.", cover: "assets/projects/dropper-device-drawing.png", type: "", skills: "", year: "", sections: [], results: [], links: [],
+    { id: "dropper-device",      title: "Dropper Device",      summary: "Description coming soon.", cover: "assets/projects/dropper-device-drawing.png", type: "", skills: "CAD, Technical drawing", year: "2025", sections: [], results: [], links: [],
       gallery: [
         { src: "assets/projects/dropper-device-side.png",    caption: "Side view",  w: 1344, h: 844 },
         { src: "assets/projects/dropper-device-front.png",   caption: "Front view", w: 871,  h: 854 },
         { src: "assets/projects/dropper-device-drawing.png", caption: "Dimensioned drawing (Ver. 4)", w: 992, h: 775, wide: true }
       ] },
-    { id: "high-speed-auv",      title: "High-Speed AUV",      summary: "Description coming soon.", cover: "assets/projects/high-speed-auv-iso.png", type: "", skills: "", year: "", sections: [], results: [], links: [],
+    { id: "high-speed-auv",      title: "High-Speed AUV",      summary: "Description coming soon.", cover: "assets/projects/high-speed-auv-iso.png", type: "", skills: "CAD, 3D rendering, Novel design", year: "2026", sections: [], results: [], links: [],
       gallery: [
         { src: "assets/projects/high-speed-auv-mk1.png",   caption: "MK1",            w: 885,  h: 452 },
         { src: "assets/projects/high-speed-auv-iso.png",   caption: "Isometric view", w: 1313, h: 678 },
         { src: "assets/projects/high-speed-auv-side.png",  caption: "Side view",      w: 1717, h: 622 },
         { src: "assets/projects/high-speed-auv-front.png", caption: "End view",       w: 807,  h: 553 }
       ] },
-    { id: "night-vision-goggles", title: "Night Vision Goggles", summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], links: [],
+    { id: "night-vision-goggles", title: "Night Vision Goggles", summary: "Description coming soon.", cover: "", type: "", skills: "CAD, Product design", year: "2024", sections: [], results: [], links: [],
       gallery: [{ src: "assets/projects/night-vision-goggles-cad.png", caption: "CAD model", w: 922, h: 1042 }] },
-    { id: "potato-cannon",       title: "Potato Cannon",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "flamethrower",        title: "Flamethrower",        summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "potato-cannon",       title: "Potato Cannon",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2019", sections: [], results: [], gallery: [], links: [] },
+    { id: "flamethrower",        title: "Flamethrower",        summary: "Description coming soon.", cover: "assets/projects/flamethrower-1.jpg", type: "Scientific", skills: "Scientific process, Physics concepts", year: "2023", sections: [], results: [], links: [],
+      gallery: [
+        { src: "assets/projects/flamethrower-1.jpg", caption: "Live demo",  w: 2000, h: 1125 },
+        { src: "assets/projects/flamethrower-2.jpg", caption: "The rig",    w: 1200, h: 1600 }
+      ] },
     { id: "hidden-bookshelf",    title: "Hidden Bookshelf",    summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "alarm",               title: "Alarm",               summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "chainsaw-bike",       title: "Chainsaw Bike",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2024", sections: [], results: [], gallery: [], links: [] },
+    { id: "alarm",               title: "Alarm",               summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2022", sections: [], results: [], gallery: [], links: [] },
+    { id: "chainsaw-bike",       title: "Chainsaw Bike",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2018", sections: [], results: [], gallery: [], links: [] },
     { id: "rocketry-design",     title: "Rocketry Design",     summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "laser-engraver",      title: "Laser Engraver",      summary: "Description coming soon.", cover: "assets/projects/laser-engraver-1.jpg", type: "", skills: "", year: "", sections: [], results: [], links: [],
+    { id: "laser-engraver",      title: "Laser Engraver",      summary: "Description coming soon.", cover: "assets/projects/laser-engraver-1.jpg", type: "", skills: "Electronics, Mechanical integration", year: "", sections: [], results: [], links: [],
       gallery: [
         { src: "assets/projects/laser-engraver-1.jpg", w: 1200, h: 1600 },
         { src: "assets/projects/laser-engraver-2.jpg", w: 1200, h: 1600 }
