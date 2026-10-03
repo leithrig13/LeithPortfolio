@@ -37,13 +37,15 @@ window.SITE = {
     /* { name: "WHMIS", issuer: "WorkSafeBC", year: "2025" }, */
     { name: "Certified SOLIDWORKS Professional", issuer: "SolidWorks Designer", year: "2026", id: "C-HNUJG86K5F", badge: "assets/badges/cswp.png" },
     { name: "Certified SOLIDWORKS Associate",    issuer: "SolidWorks Designer", year: "2026", id: "C-LRNHX7Q54K", badge: "assets/badges/cswa.png" },
-    { name: "Standard First Aid & CPR-C" },
-    { name: "Open Water Diver", issuer: "PADI" },
+    { name: "Marine Advanced First Aid", issuer: "Canadian Red Cross", year: "2025", badge: "assets/badges/marine-advanced-first-aid.svg" },
+    { name: "Open Water Diver", issuer: "PADI", badge: "assets/badges/padi-open-water.png" },
   ],
 
   // Internships, competitions, leadership roles, notable jobs. text can be one string or a list of paragraphs.
   experience: [
     /* { role: "Team Lead", org: "Okanagan Marine Robotics", period: "2024–Present", text: "One or two sentences on what you did." }, */
+    { role: "Mechanical Lead", org: "UBC Okanagan Marine Robotics (RoboSub) · Kelowna, BC", period: "Sept 2025 – Present",
+      text: "Lead the mechanical side of the team's autonomous underwater vehicle for the international RoboSub competition, overseeing eight sub-teams of about 25 engineering students working on separate, complex projects." },
     { role: "Crew Member, Inshore Rescue Boat", org: "Canadian Coast Guard, Search and Rescue · Victoria, BC", period: "Summers 2025 & 2026",
       text: [
         "Crewed a three-person inshore rescue boat station in remote coastal locations, responding to marine search and rescue taskings. I operated the Fast Rescue Craft, often as the only resource available to people injured or in distress, gave on-scene patient care as a first responder, and handed patients over to paramedics. Between calls I sometimes worked on the boats' engines. Named the program's Rookie of the Year in 2025.",
@@ -84,6 +86,7 @@ window.SITE = {
       ],
 
       // Extra images on the project page (renders, drawings, photos).
+      // A video uses video: "file.mp4" (plus an optional poster image) in place of src.
       // Optional: group: "MK1" puts photos under a version label; w/h (pixels) stop the page jumping as images load;
       // wide: true shows an image across the full row (very wide images do this automatically).
       gallery: [
@@ -158,11 +161,20 @@ window.SITE = {
         { src: "assets/projects/flamethrower-1.jpg", caption: "Live demo",  w: 2000, h: 1125 },
         { src: "assets/projects/flamethrower-2.jpg", caption: "The rig",    w: 1200, h: 1600 }
       ] },
-    { id: "hidden-bookshelf",    title: "Hidden Bookshelf",    summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
-    { id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2024", sections: [], results: [], gallery: [], links: [] },
-    { id: "alarm",               title: "Alarm",               summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2022", sections: [], results: [], gallery: [], links: [] },
+    { id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "assets/projects/computer-dock-stand.png", type: "", skills: "CAD, 3D printing", year: "2024", sections: [], results: [], links: [],
+      gallery: [
+        { src: "assets/projects/computer-dock-stand.png",           caption: "Laptop stand (CAD)",               w: 796, h: 550 },
+        { src: "assets/projects/computer-dock-legion-toolpath.png", caption: "LegionStand, sliced for printing", w: 789, h: 843 }
+      ] },
+    { id: "alarm",               title: "Alarm",               summary: "Description coming soon.", cover: "assets/projects/alarm-1.jpg", type: "", skills: "", year: "2022", sections: [], results: [], links: [],
+      gallery: [
+        { video: "assets/projects/alarm-bell.mp4", poster: "assets/projects/alarm-bell-poster.jpg", caption: "Ringing (sound on)", w: 720, h: 1280 },
+        { src: "assets/projects/alarm-1.jpg", w: 1200, h: 1600 },
+        { src: "assets/projects/alarm-2.jpg", w: 1200, h: 1600 }
+      ] },
     { id: "chainsaw-bike",       title: "Chainsaw Bike",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2018", sections: [], results: [], gallery: [], links: [] },
-    { id: "rocketry-design",     title: "Rocketry Design",     summary: "Description coming soon.", cover: "", type: "", skills: "", year: "", sections: [], results: [], gallery: [], links: [] },
+    { id: "rocketry-design",     title: "Rocketry Design",     summary: "Description coming soon.", cover: "assets/projects/rocketry-shells.png", type: "", skills: "CAD, 3D printing, Iterative design", year: "2025", sections: [], results: [], links: [],
+      gallery: [] },
     { id: "laser-engraver",      title: "Laser Engraver",      summary: "Description coming soon.", cover: "assets/projects/laser-engraver-1.jpg", type: "", skills: "Electronics, Mechanical integration", year: "", sections: [], results: [], links: [],
       gallery: [
         { src: "assets/projects/laser-engraver-1.jpg", w: 1200, h: 1600 },

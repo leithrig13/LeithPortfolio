@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F4F7F9"/>
+      <stop offset="1" stop-color="#B9C6CF"/>
+    </linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#17A2A6"/>
+      <stop offset="1" stop-color="#0B3A5C"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="98" fill="url(#ring)"/>
+  <circle cx="100" cy="100" r="88" fill="url(#face)"/>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#FFFFFF" stroke-opacity=".35" stroke-width="1.5"/>
+  <g transform="translate(64 34) scale(3)" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+    <path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/>
+  </g>
+  <line x1="48" y1="118" x2="152" y2="118" stroke="#FFFFFF" stroke-opacity=".6" stroke-width="1.5"/>
+  <text x="100" y="139" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#FFFFFF">MARINE ADVANCED</text>
+  <text x="100" y="163" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="1" fill="#FFFFFF">FIRST AID</text>
+  <path d="M58 176c7-4 14-4 21 0s14 4 21 0 14-4 21 0 14 4 21 0" fill="none" stroke="#FFFFFF" stroke-opacity=".45" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

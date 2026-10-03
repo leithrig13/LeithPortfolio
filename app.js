@@ -11,7 +11,10 @@
   set("#mark", esc(S.initials || S.name));
   set("#year", new Date().getFullYear());
   if (!S.resume) document.querySelectorAll("[data-resume]").forEach(el => el.remove());
-  else document.querySelectorAll("[data-resume]").forEach(el => el.href = S.resume);
+  else document.querySelectorAll("[data-resume]").forEach(el => {
+    el.href = S.resume;
+    el.download = `${(S.name || "").trim().replace(/\s+/g, "_")}_Resume.pdf`;
+  });
 
   const placeholderIcon = `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5-4 4-3-3-6 6"/></svg>`;
   const placeholder = label => `<div class="placeholder">${placeholderIcon}<span>${label}</span></div>`;
@@ -112,8 +115,11 @@
       if (last && last.name === name) last.items.push(g); else groups.push({ name, items: [g] });
       return groups;
     }, []).map(({ name, items }) => {
+      const media = (g, i) => g.video
+        ? `<video src="${esc(g.video)}"${g.poster ? ` poster="${esc(g.poster)}"` : ""} ${g.w > 0 && g.h > 0 ? `width="${Number(g.w)}" height="${Number(g.h)}"` : ""} controls playsinline preload="none"></video>`
+        : figure(g.src, g.caption || `${p.title}${name ? " " + name : ""}, photo ${i + 1}`, g.w, g.h);
       const figs = items.map((g, i) =>
-        `<figure${g.wide || g.w / g.h >= 2.2 ? ' class="wide"' : ""}>${figure(g.src, g.caption || `${p.title}${name ? " " + name : ""}, photo ${i + 1}`, g.w, g.h)}${g.caption ? `<figcaption>${esc(g.caption)}</figcaption>` : ""}</figure>`).join("");
+        `<figure${g.wide || g.w / g.h >= 2.2 ? ' class="wide"' : ""}>${media(g, i)}${g.caption ? `<figcaption>${esc(g.caption)}</figcaption>` : ""}</figure>`).join("");
       return name
         ? `<div class="version"><h3 class="version-label">${esc(name)}</h3><div class="gallery photos">${figs}</div></div>`
         : `<div class="gallery">${figs}</div>`;
