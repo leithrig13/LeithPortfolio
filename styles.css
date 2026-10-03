@@ -186,6 +186,8 @@ a.sheet:hover .figure img:not(.backdrop){transform:scale(1.03)}
 #certifications{border-top:1px solid var(--line)}
 .cert{display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--line);padding:16px 0}
 .cert-badge{width:44px;height:44px;flex:none;object-fit:contain}
+.cert-badge.icon{display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;color:var(--accent)}
+.cert-badge.icon svg{width:22px;height:22px}
 .cert-body{flex:1;min-width:0}
 .cert-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
 .cert b{font:500 1rem var(--sans)}

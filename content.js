@@ -13,21 +13,23 @@ window.SITE = {
   resume: "resume.pdf",                             // put the file in this folder, or set to "" to hide
 
   about: [
-    "A short paragraph on your background and program.",
-    "A short paragraph on the roles you're looking for."
+    "I'm a mechanical engineering student at UBC Okanagan, and I like taking ideas from concept to working systems. I'm the Mechanical Lead on UBC Okanagan Marine Robotics, where I oversee eight sub-teams of about 25 students building an autonomous underwater vehicle for the international RoboSub competition.",
+    "I build a lot on my own too, and I like to iterate. My go-kart started as a wooden, gravity-powered cart and ended up a gas-powered, fully roll-caged two-seater.",
+    "Outside of engineering, I've spent two summers crewing a Canadian Coast Guard inshore rescue boat on the BC coast, responding to search and rescue calls, and was named the program's Rookie of the Year in 2025. It taught me to communicate clearly and stay calm under pressure. My days start early at the gym, and the rest goes to studying and building."
   ],
 
   links: [
-    { label: "Email",    url: "mailto:you@example.com" },
-    { label: "LinkedIn", url: "https://www.linkedin.com/in/your-profile" },
-    { label: "GitHub",   url: "https://github.com/your-username" }
+    { label: "Email",    url: "mailto:leithr@telus.net" },
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/leith" },
+    { label: "GitHub",   url: "https://github.com/leithrig13" }
   ],
 
   skills: [
-    { group: "CAD",         items: "Skill, skill, skill" },
-    { group: "Fabrication", items: "Skill, skill, skill" },
-    { group: "Electronics", items: "Skill, skill, skill" },
-    { group: "Software",    items: "Skill, skill, skill" }
+    { group: "CAD",         items: "SOLIDWORKS (CSWP, CSWA), Technical drawings" },
+    { group: "Fabrication", items: "3D printing, Laser engraving, Iterative prototyping" },
+    { group: "Electronics", items: "Arduino, Electronics & wiring" },
+    { group: "Programming", items: "Python, C++" },
+    { group: "Languages",   items: "English, French (DELF B2)" }
   ],
 
   // Licenses, courses, safety tickets, awards. badge (optional) is an image in assets/badges/.
@@ -35,11 +37,18 @@ window.SITE = {
     /* { name: "WHMIS", issuer: "WorkSafeBC", year: "2025" }, */
     { name: "Certified SOLIDWORKS Professional", issuer: "SolidWorks Designer", year: "2026", id: "C-HNUJG86K5F", badge: "assets/badges/cswp.png" },
     { name: "Certified SOLIDWORKS Associate",    issuer: "SolidWorks Designer", year: "2026", id: "C-LRNHX7Q54K", badge: "assets/badges/cswa.png" },
+    { name: "Standard First Aid & CPR-C" },
+    { name: "Open Water Diver", issuer: "PADI" },
   ],
 
-  // Internships, competitions, leadership roles, notable jobs.
+  // Internships, competitions, leadership roles, notable jobs. text can be one string or a list of paragraphs.
   experience: [
     /* { role: "Team Lead", org: "Okanagan Marine Robotics", period: "2024–Present", text: "One or two sentences on what you did." }, */
+    { role: "Crew Member, Inshore Rescue Boat", org: "Canadian Coast Guard, Search and Rescue · Victoria, BC", period: "Summers 2025 & 2026",
+      text: [
+        "Crewed a three-person inshore rescue boat station in remote coastal locations, responding to marine search and rescue taskings. I operated the Fast Rescue Craft, often as the only resource available to people injured or in distress, gave on-scene patient care as a first responder, and handed patients over to paramedics. Between calls I sometimes worked on the boats' engines. Named the program's Rookie of the Year in 2025.",
+        "What I took from it: on a three-person crew, clear communication and staying calm under pressure aren't optional. Hundreds of hours of training, plus keeping the engines running, taught me that being ready on short notice comes from the preparation and maintenance done before anything goes wrong. I bring that same mindset to how I design and test."
+      ] },
   ],
 
   /* -------------------------------------------------------------------
@@ -107,13 +116,34 @@ window.SITE = {
         { group: "MK5", src: "assets/projects/go-kart-mk5-4.jpg", w: 1200, h: 1600 },
         { group: "MK5", src: "assets/projects/go-kart-mk5-5.jpg", w: 1600, h: 1200 }
       ] },
-    { id: "dropper-device",      title: "Dropper Device",      summary: "Description coming soon.", cover: "assets/projects/dropper-device-drawing.png", type: "", skills: "CAD, Technical drawing", year: "2025", sections: [], results: [], links: [],
+    { id: "dropper-device",      title: "Dropper Device",
+      summary: "A servo-driven rotary dropper that carries two competition markers and releases them one at a time for RoboSub's bin task.",
+      cover: "assets/projects/dropper-device-drawing.png", type: "Team (RoboSub)", skills: "CAD, Technical drawing", year: "2025", links: [],
+      sections: [
+        { heading: "Problem",     text: "In the RoboSub 2026 Recon task, the AUV drops up to two markers into bins along a pipeline. A marker in any bin scores 300 points, and one in each of the two bins matching the AUV's role scores 800 apiece, so a clean pair of drops is worth up to 1,600 points. Landing a marker also counts toward the run's time bonus. The vehicle needed a way to carry two markers through the whole run and release them one at a time, only when commanded." },
+        { heading: "Constraints", text: "Each marker must fit within a 2.0 × 2.0 × 6.0 in (51 × 51 × 152 mm) box and weigh no more than 2.0 lb (0.91 kg) in air. Going over by less than 10% costs 500 points, and more than that disqualifies the marker. A vehicle can carry at most two, and nothing else may be released into the pool. The mechanism had to hold both markers securely through acceleration and turns, then let go of exactly one at a time, underwater and fully autonomously." },
+        { heading: "My role",     text: "As a member of UBC Okanagan Marine Robotics, I took ownership of the dropper and ran it from concept through design, prototyping and manufacturing." },
+        { heading: "Process",     text: "I went with a rotary design: a compact carrier inside a rigid frame, indexed by a single underwater servo. In the stowed position the rotor supports both markers. On command, the servo turns the carrier to line one pocket up with the discharge opening and a single marker falls free; a second turn releases the other. I chose this layout to keep the subsystem compact, cut the part count, improve reliability underwater and make every drop repeatable. It's sized around our markers, steel ball bearings with blue fins, and went through four versions in SOLIDWORKS with 3D-printed prototypes along the way, up to the Version 4 drawing below." }
+      ],
+      results: [
+        { value: "2", label: "Markers, released one at a time" },
+        { value: "1", label: "Servo drives the whole mechanism" },
+        { value: "4", label: "Design versions" }
+      ],
       gallery: [
         { src: "assets/projects/dropper-device-side.png",    caption: "Side view",  w: 1344, h: 844 },
         { src: "assets/projects/dropper-device-front.png",   caption: "Front view", w: 871,  h: 854 },
         { src: "assets/projects/dropper-device-drawing.png", caption: "Dimensioned drawing (Ver. 4)", w: 992, h: 775, wide: true }
       ] },
-    { id: "high-speed-auv",      title: "High-Speed AUV",      summary: "Description coming soon.", cover: "assets/projects/high-speed-auv-iso.png", type: "", skills: "CAD, 3D rendering, Novel design", year: "2026", sections: [], results: [], links: [],
+    { id: "high-speed-auv",      title: "High-Speed AUV",
+      summary: "A small, high-speed auxiliary AUV designed to work alongside the team's main vehicle at RoboSub.",
+      cover: "assets/projects/high-speed-auv-iso.png", type: "Team (RoboSub)", skills: "CAD, 3D rendering, Novel design", year: "2026", results: [], links: [],
+      sections: [
+        { heading: "Problem",     text: "RoboSub 2026 lets each team field up to two vehicles. Both run the course at the same time and share one countdown clock, and they can earn up to 1,000 extra points by communicating and cueing each other. Once the minimum tasks are done, every minute left on the clock is also worth 100 bonus points. My goal was a small, fast second vehicle to complement the main AUV." },
+        { heading: "Constraints", text: "Both vehicles together have to fit in the same 3 × 3 × 6 ft (0.9 × 0.9 × 1.8 m) volume allowed for a single AUV. Each one is weighed on its own: at 22 kg or less it earns the largest weight bonus, above 38 kg it loses points, and above 60 kg it's disqualified. Each vehicle must also pass through the validation gate first, run fully autonomously, have its own kill switch that cuts power to all propulsion, use shrouded propellers, and float at least 0.5% positively buoyant when switched off." },
+        { heading: "My role",     text: "As a member of UBC Okanagan Marine Robotics, I designed and prototyped the auxiliary vehicle." },
+        { heading: "Process",     text: "The layout is a slender, torpedo-style vehicle built around a clear tube hull, with swept wings at the tail around a shrouded thruster. MK1 carried the battery and electronics inside the tube and steered with a servo-driven fin on a pushrod linkage. The later model reworks the front end around a larger ducted thruster on bolted side plates, with a linkage-driven fin beneath it." }
+      ],
       gallery: [
         { src: "assets/projects/high-speed-auv-mk1.png",   caption: "MK1",            w: 885,  h: 452 },
         { src: "assets/projects/high-speed-auv-iso.png",   caption: "Isometric view", w: 1313, h: 678 },

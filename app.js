@@ -56,10 +56,12 @@
       `<div><b>${esc(s.group)}</b><span>${esc(s.items)}</span></div>`).join(""));
 
     const certifications = S.certifications || [];
+    const anyBadge = certifications.some(c => c.badge);
+    const awardIcon = `<span class="cert-badge icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M8.5 13.9 7 22l5-3 5 3-1.5-8.1"/></svg></span>`;
     set("#certifications", certifications.length
       ? certifications.map(c => `
         <div class="cert">
-          ${c.badge ? `<img class="cert-badge" src="${esc(c.badge)}" alt="" loading="lazy">` : ""}
+          ${c.badge ? `<img class="cert-badge" src="${esc(c.badge)}" alt="" loading="lazy">` : anyBadge ? awardIcon : ""}
           <div class="cert-body">
             <div class="cert-head"><b>${esc(c.name)}</b><span>${esc([c.issuer, c.year].filter(Boolean).join(" · "))}</span></div>
             ${c.id ? `<span class="cert-id">Credential ID ${esc(c.id)}</span>` : ""}
@@ -73,7 +75,7 @@
         <div class="exp">
           <div class="exp-top"><b>${esc(e.role)}</b><span>${esc(e.period || "")}</span></div>
           ${e.org ? `<div class="exp-org">${esc(e.org)}</div>` : ""}
-          ${e.text ? `<p>${esc(e.text)}</p>` : ""}
+          ${[].concat(e.text || []).map(t => `<p>${esc(t)}</p>`).join("")}
         </div>`).join("")
       : `<div class="empty small"><p>Add roles and experience in <code>content.js</code>.</p></div>`);
 
