@@ -210,7 +210,15 @@ window.SITE = {
     { hidden: true, id: "chainsaw-bike",       title: "Chainsaw Bike",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2018", sections: [], results: [], gallery: [], links: [] },
     { hidden: true, id: "rocketry-design",     title: "Rocketry Design",     summary: "Description coming soon.", cover: "assets/projects/rocketry-shells.png", type: "", skills: "CAD, 3D printing, Iterative design", year: "2025", sections: [], results: [], links: [],
       gallery: [] },
-    { hidden: true, id: "laser-engraver",      title: "Laser Engraver",      summary: "Description coming soon.", cover: "assets/projects/laser-engraver-1.jpg", type: "", skills: "Electronics, Mechanical integration", year: "", sections: [], results: [], links: [],
+    { id: "laser-engraver",      title: "Laser Engraver",
+      summary: "My first 3D printer, an MP Select Mini V2, converted into a DIY laser engraver with a 3D-printed mount and image-to-G-code software I built with help from AI.",
+      cover: "assets/projects/laser-engraver-1.jpg", type: "Personal", skills: "Electronics, Mechanical integration", year: "2025", results: [], links: [],
+      sections: [
+        { heading: "Where it started", text: "The MP Select Mini V2 was my first 3D printer, which I got in grade 7. Later I added two bigger printers, an Ender 5 Plus and, about two years after that, a CR-10 Smart Pro. With those doing the printing, the small one was free to become something else." },
+        { heading: "The conversion",   text: "I bought an inexpensive laser module on Amazon, wired it into the printer's extruder pins, and mounted it with a bracket I 3D printed. The printer's motion system now moves the laser the same way it used to move the print head." },
+        { heading: "The software",     text: "Finding software that converted images into G-code well was the hardest part, and none of the tools I tried worked the way I needed. So I used AI to help me build my own converter. It turns an image into G-code that I upload straight to the printer." },
+        { heading: "Limits",           text: "The laser is low-powered, a trade-off for keeping the cost down, so it only works on certain materials." }
+      ],
       gallery: [
         { src: "assets/projects/laser-engraver-1.jpg", w: 1200, h: 1600 },
         { src: "assets/projects/laser-engraver-2.jpg", w: 1200, h: 1600 }
