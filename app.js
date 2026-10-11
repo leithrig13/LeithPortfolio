@@ -4,7 +4,7 @@
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
   const $ = sel => document.querySelector(sel);
   const set = (sel, html) => { const el = $(sel); if (el) el.innerHTML = html; };
-  const projects = Array.isArray(S.projects) ? S.projects : [];
+  const projects = (Array.isArray(S.projects) ? S.projects : []).filter(p => !p.hidden);
 
   // Shared: nav, footer, title
   document.querySelectorAll("[data-name]").forEach(el => el.textContent = S.name || "");

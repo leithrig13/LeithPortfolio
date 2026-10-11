@@ -244,6 +244,7 @@ footer a:hover{color:var(--ink)}
     transition:opacity .8s var(--ease) var(--d,0s), translate .8s var(--ease) var(--d,0s);
   }
   .js .reveal.in{opacity:1;translate:0 0}
+  .js .reveal[id]{scroll-margin-top:28px}  /* link targets: offset the 28px slide-in so they don't end up under the nav */
   .js .sheet.reveal{
     transition:opacity .8s var(--ease) var(--d,0s), translate .8s var(--ease) var(--d,0s),
                box-shadow .3s ease, transform .3s ease, border-color .3s ease;

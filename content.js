@@ -48,7 +48,7 @@ window.SITE = {
       text: "Lead the mechanical side of the team's autonomous underwater vehicle for the international RoboSub competition, overseeing eight sub-teams of about 25 engineering students working on separate, complex projects." },
     { role: "Crew Member, Inshore Rescue Boat", org: "Canadian Coast Guard, Search and Rescue · Victoria, BC", period: "Summers 2025 & 2026",
       text: [
-        "Crewed a three-person inshore rescue boat station in remote coastal locations, responding to marine search and rescue taskings. I operated the Fast Rescue Craft, often as the only resource available to people injured or in distress, gave on-scene patient care as a first responder, and handed patients over to paramedics. Between calls I sometimes worked on the boats' engines. Named the program's Rookie of the Year in 2025.",
+        "Crewed a three-person inshore rescue boat station in remote coastal locations, responding to marine search and rescue taskings. I operated the Fast Rescue Craft, often as the only resource available to people injured or in distress, gave on-scene patient care as a first responder, and handed patients over to paramedics. One of my responsibilities was ensuring the smooth operation and upkeep of the engines and the maintenance of the boat, including daily inspections and cleaning. Named the program's Rookie of the Year in 2025.",
         "What I took from it: on a three-person crew, clear communication and staying calm under pressure aren't optional. Hundreds of hours of training, plus keeping the engines running, taught me that being ready on short notice comes from the preparation and maintenance done before anything goes wrong. I bring that same mindset to how I design and test."
       ] },
   ],
@@ -100,24 +100,40 @@ window.SITE = {
     },
     */
 
-    // PLACEHOLDERS: titles only. Fill in summary, cover, type, skills, year and sections for each.
-    { id: "go-kart",             title: "Go Kart",             summary: "Description coming soon.", cover: "assets/projects/go-kart-mk4.jpg", type: "", skills: "Welding, Fabrication, Mechanical assembly", year: "2019–2021", sections: [], results: [], links: [],
+    // hidden: true keeps a project off the site until it's finished. Delete it to publish the project.
+    { id: "go-kart",             title: "Go Kart",
+      summary: "A go-kart I designed and rebuilt over six versions, from scrap wood and bike wheels in grade 8, to a welded steel two-seater, to a lightweight frame made from broken carbon fibre hockey sticks.",
+      cover: "assets/projects/go-kart-mk4.jpg", type: "Personal", skills: "MIG welding, Fabrication, CAD, Iterative design", year: "2019–2021", links: [],
+      sections: [
+        { heading: "MK1: First build",    text: "I started over spring break in grade 8, building it from scrap wood, screws and bolts, two 10-speed bike wheels and a pair of small wheels we had lying around. It sat very low to the ground and had no engine: I rolled it downhill and steered with my feet. Two problems showed up quickly. The wheel layout made it unstable, and the square frame flexed a lot. I don't have a photo of this one." },
+        { heading: "MK2: A-frame",        text: "To stop the flex, I rebuilt the body as an A-frame to make it stiffer." },
+        { heading: "MK3: More clearance", text: "Next I fitted wider tires, reworked the front steering and raised the frame for more ground clearance. It was still gravity-powered and steered with my feet, and that was as far as I could take wood." },
+        { heading: "MK4: Steel",          text: "That school year, my woodwork teacher let me use the shop's MIG welder and its scrap metal. I modelled the design in CAD on my iPad, worked out the details in sketches, and learned to weld by building it. The result was a two-seater about 7 ft long with a full roll cage. I made almost everything myself: the axle, the wheel hubs (cut and welded), and a push-pull steering linkage that works on the same idea as rack and pinion, using parts I cut and bored out. The seats were free from the side of the road, and the frame was all shop scrap." },
+        { heading: "MK5: Cutting weight", text: "Once it was finished, the kart was far too heavy for its small engine to drive well. I cut off the roll cage and kept about a foot of sidewall, but it was still too heavy, so the sidewalls came off as well. Stripped down to the base frame, it finally drove, if only a little." },
+        { heading: "MK6: Hockey sticks",  text: "The steel kart was carrying far too much metal, so I redesigned it as a compact one-seater. I kept the same hubs and steering components but built the frame from broken carbon fibre hockey sticks I had lying around, which are very light and very resistant to bending. The weak point was the joints: bolting straight through the sticks let them rotate too much at each connection." },
+        { heading: "What I learned",      text: "Each version fixed the biggest problem of the one before: a frame that flexed led to an A-frame, the limits of wood led to steel, and an overweight steel kart led to a carbon fibre frame. I learned to keep weight in check against the power available, and that a structure is only as good as its joints. Along the way I learned MIG welding, went from CAD and sketches to a finished build, and made my own axle, hubs and steering." }
+      ],
+      results: [
+        { value: "Grade 8", label: "Where it started" },
+        { value: "~7 ft",   label: "Steel two-seater with a full roll cage" },
+        { value: "MIG",     label: "Welding, learned on this build" }
+      ],
       gallery: [
-        { group: "MK1", src: "assets/projects/go-kart-mk1.jpg",   w: 1600, h: 1200 },
-        { group: "MK2", src: "assets/projects/go-kart-mk2.jpg",   w: 1600, h: 1200 },
-        { group: "MK3", src: "assets/projects/go-kart-mk3-1.jpg", w: 1600, h: 1200 },
-        { group: "MK3", src: "assets/projects/go-kart-mk3-2.jpg", w: 1600, h: 1200 },
-        { group: "MK3", src: "assets/projects/go-kart-mk3-3.jpg", w: 1200, h: 1600 },
-        { group: "MK3", src: "assets/projects/go-kart-mk3-4.jpg", w: 1200, h: 1600 },
-        { group: "MK3", src: "assets/projects/go-kart-mk3-5.jpg", w: 1200, h: 1600 },
-        { group: "MK3", src: "assets/projects/go-kart-mk3-6.jpg", w: 1200, h: 1600 },
-        { group: "MK3", src: "assets/projects/go-kart-mk3-7.jpg", w: 1200, h: 1600 },
-        { group: "MK4", src: "assets/projects/go-kart-mk4.jpg",   w: 1200, h: 1600 },
-        { group: "MK5", src: "assets/projects/go-kart-mk5-1.jpg", w: 1200, h: 1600 },
-        { group: "MK5", src: "assets/projects/go-kart-mk5-2.jpg", w: 1600, h: 1200 },
-        { group: "MK5", src: "assets/projects/go-kart-mk5-3.jpg", w: 1580, h: 1600 },
-        { group: "MK5", src: "assets/projects/go-kart-mk5-4.jpg", w: 1200, h: 1600 },
-        { group: "MK5", src: "assets/projects/go-kart-mk5-5.jpg", w: 1600, h: 1200 }
+        { group: "MK2", src: "assets/projects/go-kart-mk1.jpg",   w: 1600, h: 1200 },
+        { group: "MK3", src: "assets/projects/go-kart-mk2.jpg",   w: 1600, h: 1200 },
+        { group: "MK4", src: "assets/projects/go-kart-mk3-1.jpg", w: 1600, h: 1200 },
+        { group: "MK4", src: "assets/projects/go-kart-mk3-2.jpg", w: 1600, h: 1200 },
+        { group: "MK4", src: "assets/projects/go-kart-mk3-3.jpg", w: 1200, h: 1600 },
+        { group: "MK4", src: "assets/projects/go-kart-mk3-4.jpg", w: 1200, h: 1600 },
+        { group: "MK4", src: "assets/projects/go-kart-mk3-5.jpg", w: 1200, h: 1600 },
+        { group: "MK4", src: "assets/projects/go-kart-mk3-6.jpg", w: 1200, h: 1600 },
+        { group: "MK4", src: "assets/projects/go-kart-mk3-7.jpg", w: 1200, h: 1600 },
+        { group: "MK5", src: "assets/projects/go-kart-mk4.jpg",   w: 1200, h: 1600 },
+        { group: "MK6", src: "assets/projects/go-kart-mk5-1.jpg", w: 1200, h: 1600 },
+        { group: "MK6", src: "assets/projects/go-kart-mk5-2.jpg", w: 1600, h: 1200 },
+        { group: "MK6", src: "assets/projects/go-kart-mk5-3.jpg", w: 1580, h: 1600 },
+        { group: "MK6", src: "assets/projects/go-kart-mk5-4.jpg", w: 1200, h: 1600 },
+        { group: "MK6", src: "assets/projects/go-kart-mk5-5.jpg", w: 1600, h: 1200 }
       ] },
     { id: "dropper-device",      title: "Dropper Device",
       summary: "A servo-driven rotary dropper that carries two competition markers and releases them one at a time for RoboSub's bin task.",
@@ -140,12 +156,18 @@ window.SITE = {
       ] },
     { id: "high-speed-auv",      title: "High-Speed AUV",
       summary: "A small, high-speed auxiliary AUV designed to work alongside the team's main vehicle at RoboSub.",
-      cover: "assets/projects/high-speed-auv-iso.png", type: "Team (RoboSub)", skills: "CAD, 3D rendering, Novel design", year: "2026", results: [], links: [],
+      cover: "assets/projects/high-speed-auv-iso.png", type: "Team (RoboSub)", skills: "CAD, 3D rendering, Novel design", year: "2026", links: [],
       sections: [
         { heading: "Problem",     text: "RoboSub 2026 lets each team field up to two vehicles. Both run the course at the same time and share one countdown clock, and they can earn up to 1,000 extra points by communicating and cueing each other. Once the minimum tasks are done, every minute left on the clock is also worth 100 bonus points. My goal was a small, fast second vehicle to complement the main AUV." },
-        { heading: "Constraints", text: "Both vehicles together have to fit in the same 3 × 3 × 6 ft (0.9 × 0.9 × 1.8 m) volume allowed for a single AUV. Each one is weighed on its own: at 22 kg or less it earns the largest weight bonus, above 38 kg it loses points, and above 60 kg it's disqualified. Each vehicle must also pass through the validation gate first, run fully autonomously, have its own kill switch that cuts power to all propulsion, use shrouded propellers, and float at least 0.5% positively buoyant when switched off." },
-        { heading: "My role",     text: "As a member of UBC Okanagan Marine Robotics, I designed and prototyped the auxiliary vehicle." },
+        { heading: "Constraints", text: "Both vehicles together have to fit in the same 3 × 3 × 6 ft (0.9 × 0.9 × 1.8 m) volume allowed for a single AUV. Each one is weighed on its own: at 22 kg or less it earns the largest weight bonus, above 38 kg it loses points, and above 60 kg it's disqualified. Each vehicle must also pass through the validation gate first, run fully autonomously, have its own kill switch that cuts power to all propulsion, use shrouded propellers, and float at least 0.5% positively buoyant when switched off. On top of that, our budget only covered two thrusters and one servo, so the design had to get enough control out of just three actuators to actually drive it." },
+        { heading: "My role",     text: "As a member of UBC Okanagan Marine Robotics, I took on the auxiliary vehicle as an extra project after finishing the dropper, and designed and prototyped it. This year it is going through revisions, which I'm overseeing as mechanical lead." },
+        { heading: "Control",     text: "With only three actuators, each one handles a single axis. The front thruster pitches the nose up or down, the rear thruster drives the vehicle forward and in reverse, and a servo-driven rudder handles yaw to turn left or right. Together they cover nearly all the movement we need. The one thing the vehicle can't do reliably is control its roll." },
         { heading: "Process",     text: "The layout is a slender, torpedo-style vehicle built around a clear tube hull, with swept wings at the tail around a shrouded thruster. MK1 carried the battery and electronics inside the tube and steered with a servo-driven fin on a pushrod linkage. The later model reworks the front end around a larger ducted thruster on bolted side plates, with a linkage-driven fin beneath it." }
+      ],
+      results: [
+        { value: "2", label: "Thrusters: pitch and forward thrust" },
+        { value: "1", label: "Servo-driven rudder for yaw" },
+        { value: "3", label: "Actuators to drive the whole vehicle" }
       ],
       gallery: [
         { src: "assets/projects/high-speed-auv-mk1.png",   caption: "MK1",            w: 885,  h: 452 },
@@ -153,29 +175,41 @@ window.SITE = {
         { src: "assets/projects/high-speed-auv-side.png",  caption: "Side view",      w: 1717, h: 622 },
         { src: "assets/projects/high-speed-auv-front.png", caption: "End view",       w: 807,  h: 553 }
       ] },
-    { id: "night-vision-goggles", title: "Night Vision Goggles", summary: "Description coming soon.", cover: "", type: "", skills: "CAD, Product design", year: "2024", sections: [], results: [], links: [],
+    { hidden: true, id: "night-vision-goggles", title: "Night Vision Goggles", summary: "Description coming soon.", cover: "", type: "", skills: "CAD, Product design", year: "2024", sections: [], results: [], links: [],
       gallery: [{ src: "assets/projects/night-vision-goggles-cad.png", caption: "CAD model", w: 922, h: 1042 }] },
-    { id: "potato-cannon",       title: "Potato Cannon",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2019", sections: [], results: [], gallery: [], links: [] },
-    { id: "flamethrower",        title: "Flamethrower",        summary: "Description coming soon.", cover: "assets/projects/flamethrower-1.jpg", type: "Scientific", skills: "Scientific process, Physics concepts", year: "2023", sections: [], results: [], links: [],
+    { hidden: true, id: "potato-cannon",       title: "Potato Cannon",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2019", sections: [], results: [], gallery: [], links: [] },
+    { id: "flamethrower",        title: "Flamethrower",
+      summary: "A flamethrower made from an old fire extinguisher, built to explain Bernoulli's principle in my video entry for the Breakthrough Junior Challenge.",
+      cover: "assets/projects/flamethrower-1.jpg", type: "Scientific", skills: "Scientific process, Physics concepts", year: "2023", links: [],
+      sections: [
+        { heading: "The challenge",       text: "The Breakthrough Junior Challenge asks students to explain an advanced idea in physics, math or biology in a captivating two-minute video. I chose Bernoulli's principle, shown through fluid flowing out of a pressurized cylinder, and built a flamethrower to demonstrate it." },
+        { heading: "The build",           text: "I emptied an old fire extinguisher, cut a hole in it and fitted a Schrader (bike tire) valve so I could repressurize it. I filled it with kerosene and 3D printed a wick holder for the front, holding a wick dipped in kerosene to light the stream as it leaves the nozzle." },
+        { heading: "The video",           text: "The video shows the stream of fire leaving the flamethrower, along with its velocity profiles, and walks through the math behind the flow." },
+        { heading: "Getting the arc right", text: "I wanted the burning kerosene to trace a parabolic path on camera. With the original nozzle, the fuel just lit up as it came out instead of arcing. I swapped the nozzle, but then the stream wasn't aerosolized and wouldn't ignite at all. The fix was to heat the kerosene closer to its ignition point before firing, so the wick had to add much less heat to light it, and the stream ignited while still showing the parabolic path." }
+      ],
+      results: [
+        { value: "2 min",     label: "Video explaining the physics" },
+        { value: "Bernoulli", label: "Principle demonstrated: flow from a pressurized cylinder" }
+      ],
       gallery: [
         { src: "assets/projects/flamethrower-1.jpg", caption: "Live demo",  w: 2000, h: 1125 },
         { src: "assets/projects/flamethrower-2.jpg", caption: "The rig",    w: 1200, h: 1600 }
       ] },
-    { id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "assets/projects/computer-dock-stand.png", type: "", skills: "CAD, 3D printing", year: "2024", sections: [], results: [], links: [],
+    { hidden: true, id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "assets/projects/computer-dock-stand.png", type: "", skills: "CAD, 3D printing", year: "2024", sections: [], results: [], links: [],
       gallery: [
         { src: "assets/projects/computer-dock-stand.png",           caption: "Laptop stand (CAD)",               w: 796, h: 550 },
         { src: "assets/projects/computer-dock-legion-toolpath.png", caption: "LegionStand, sliced for printing", w: 789, h: 843 }
       ] },
-    { id: "alarm",               title: "Alarm",               summary: "Description coming soon.", cover: "assets/projects/alarm-1.jpg", type: "", skills: "", year: "2022", sections: [], results: [], links: [],
+    { hidden: true, id: "alarm",               title: "Alarm",               summary: "Description coming soon.", cover: "assets/projects/alarm-1.jpg", type: "", skills: "", year: "2022", sections: [], results: [], links: [],
       gallery: [
         { video: "assets/projects/alarm-bell.mp4", poster: "assets/projects/alarm-bell-poster.jpg", caption: "Ringing (sound on)", w: 720, h: 1280 },
         { src: "assets/projects/alarm-1.jpg", w: 1200, h: 1600 },
         { src: "assets/projects/alarm-2.jpg", w: 1200, h: 1600 }
       ] },
-    { id: "chainsaw-bike",       title: "Chainsaw Bike",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2018", sections: [], results: [], gallery: [], links: [] },
-    { id: "rocketry-design",     title: "Rocketry Design",     summary: "Description coming soon.", cover: "assets/projects/rocketry-shells.png", type: "", skills: "CAD, 3D printing, Iterative design", year: "2025", sections: [], results: [], links: [],
+    { hidden: true, id: "chainsaw-bike",       title: "Chainsaw Bike",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2018", sections: [], results: [], gallery: [], links: [] },
+    { hidden: true, id: "rocketry-design",     title: "Rocketry Design",     summary: "Description coming soon.", cover: "assets/projects/rocketry-shells.png", type: "", skills: "CAD, 3D printing, Iterative design", year: "2025", sections: [], results: [], links: [],
       gallery: [] },
-    { id: "laser-engraver",      title: "Laser Engraver",      summary: "Description coming soon.", cover: "assets/projects/laser-engraver-1.jpg", type: "", skills: "Electronics, Mechanical integration", year: "", sections: [], results: [], links: [],
+    { hidden: true, id: "laser-engraver",      title: "Laser Engraver",      summary: "Description coming soon.", cover: "assets/projects/laser-engraver-1.jpg", type: "", skills: "Electronics, Mechanical integration", year: "", sections: [], results: [], links: [],
       gallery: [
         { src: "assets/projects/laser-engraver-1.jpg", w: 1200, h: 1600 },
         { src: "assets/projects/laser-engraver-2.jpg", w: 1200, h: 1600 }
