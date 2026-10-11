@@ -101,6 +101,24 @@ window.SITE = {
     */
 
     // hidden: true keeps a project off the site until it's finished. Delete it to publish the project.
+    { id: "flamethrower",        title: "Flamethrower",
+      summary: "A flamethrower made from an old fire extinguisher, built to explain Bernoulli's principle in my video entry for the Breakthrough Junior Challenge.",
+      cover: "assets/projects/flamethrower-1.jpg", type: "Scientific", skills: "Scientific process, Physics concepts", year: "2023",
+      links: [{ label: "Watch the video", url: "https://youtu.be/s4bYDZ8JGsw" }],
+      sections: [
+        { heading: "The challenge",       text: "The Breakthrough Junior Challenge asks students to explain an advanced idea in physics, math or biology in a captivating two-minute video. I chose Bernoulli's principle, shown through fluid flowing out of a pressurized cylinder, and built a flamethrower to demonstrate it." },
+        { heading: "The build",           text: "I emptied an old fire extinguisher, cut a hole in it and fitted a Schrader (bike tire) valve so I could repressurize it. I filled it with kerosene and 3D printed a wick holder for the front, holding a wick dipped in kerosene to light the stream as it leaves the nozzle." },
+        { heading: "The video",           text: "The video shows the stream of fire leaving the flamethrower, along with its velocity profiles, and walks through the math behind the flow." },
+        { heading: "Getting the arc right", text: "I wanted the burning kerosene to trace a parabolic path on camera. With the original nozzle, the fuel just lit up as it came out instead of arcing. I swapped the nozzle, but then the stream wasn't aerosolized and wouldn't ignite at all. The fix was to heat the kerosene closer to its ignition point before firing, so the wick had to add much less heat to light it, and the stream ignited while still showing the parabolic path." }
+      ],
+      results: [
+        { value: "2 min",     label: "Video explaining the physics" },
+        { value: "Bernoulli", label: "Principle demonstrated: flow from a pressurized cylinder" }
+      ],
+      gallery: [
+        { src: "assets/projects/flamethrower-1.jpg", caption: "Live demo",  w: 2000, h: 1125 },
+        { src: "assets/projects/flamethrower-2.jpg", caption: "The rig",    w: 1200, h: 1600 }
+      ] },
     { id: "go-kart",             title: "Go Kart",
       summary: "A go-kart I designed and rebuilt over six versions, from scrap wood and bike wheels in grade 8, to a welded steel two-seater, to a lightweight frame made from broken carbon fibre hockey sticks.",
       cover: "assets/projects/go-kart-mk4.jpg", type: "Personal", skills: "MIG welding, Fabrication, CAD, Iterative design", year: "2019–2021", links: [],
@@ -178,24 +196,6 @@ window.SITE = {
     { hidden: true, id: "night-vision-goggles", title: "Night Vision Goggles", summary: "Description coming soon.", cover: "", type: "", skills: "CAD, Product design", year: "2024", sections: [], results: [], links: [],
       gallery: [{ src: "assets/projects/night-vision-goggles-cad.png", caption: "CAD model", w: 922, h: 1042 }] },
     { hidden: true, id: "potato-cannon",       title: "Potato Cannon",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2019", sections: [], results: [], gallery: [], links: [] },
-    { id: "flamethrower",        title: "Flamethrower",
-      summary: "A flamethrower made from an old fire extinguisher, built to explain Bernoulli's principle in my video entry for the Breakthrough Junior Challenge.",
-      cover: "assets/projects/flamethrower-1.jpg", type: "Scientific", skills: "Scientific process, Physics concepts", year: "2023",
-      links: [{ label: "Watch the video", url: "https://youtu.be/s4bYDZ8JGsw" }],
-      sections: [
-        { heading: "The challenge",       text: "The Breakthrough Junior Challenge asks students to explain an advanced idea in physics, math or biology in a captivating two-minute video. I chose Bernoulli's principle, shown through fluid flowing out of a pressurized cylinder, and built a flamethrower to demonstrate it." },
-        { heading: "The build",           text: "I emptied an old fire extinguisher, cut a hole in it and fitted a Schrader (bike tire) valve so I could repressurize it. I filled it with kerosene and 3D printed a wick holder for the front, holding a wick dipped in kerosene to light the stream as it leaves the nozzle." },
-        { heading: "The video",           text: "The video shows the stream of fire leaving the flamethrower, along with its velocity profiles, and walks through the math behind the flow." },
-        { heading: "Getting the arc right", text: "I wanted the burning kerosene to trace a parabolic path on camera. With the original nozzle, the fuel just lit up as it came out instead of arcing. I swapped the nozzle, but then the stream wasn't aerosolized and wouldn't ignite at all. The fix was to heat the kerosene closer to its ignition point before firing, so the wick had to add much less heat to light it, and the stream ignited while still showing the parabolic path." }
-      ],
-      results: [
-        { value: "2 min",     label: "Video explaining the physics" },
-        { value: "Bernoulli", label: "Principle demonstrated: flow from a pressurized cylinder" }
-      ],
-      gallery: [
-        { src: "assets/projects/flamethrower-1.jpg", caption: "Live demo",  w: 2000, h: 1125 },
-        { src: "assets/projects/flamethrower-2.jpg", caption: "The rig",    w: 1200, h: 1600 }
-      ] },
     { hidden: true, id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "assets/projects/computer-dock-stand.png", type: "", skills: "CAD, 3D printing", year: "2024", sections: [], results: [], links: [],
       gallery: [
         { src: "assets/projects/computer-dock-stand.png",           caption: "Laptop stand (CAD)",               w: 796, h: 550 },
