@@ -180,7 +180,8 @@ window.SITE = {
     { hidden: true, id: "potato-cannon",       title: "Potato Cannon",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2019", sections: [], results: [], gallery: [], links: [] },
     { id: "flamethrower",        title: "Flamethrower",
       summary: "A flamethrower made from an old fire extinguisher, built to explain Bernoulli's principle in my video entry for the Breakthrough Junior Challenge.",
-      cover: "assets/projects/flamethrower-1.jpg", type: "Scientific", skills: "Scientific process, Physics concepts", year: "2023", links: [],
+      cover: "assets/projects/flamethrower-1.jpg", type: "Scientific", skills: "Scientific process, Physics concepts", year: "2023",
+      links: [{ label: "Watch the video", url: "https://youtu.be/s4bYDZ8JGsw" }],
       sections: [
         { heading: "The challenge",       text: "The Breakthrough Junior Challenge asks students to explain an advanced idea in physics, math or biology in a captivating two-minute video. I chose Bernoulli's principle, shown through fluid flowing out of a pressurized cylinder, and built a flamethrower to demonstrate it." },
         { heading: "The build",           text: "I emptied an old fire extinguisher, cut a hole in it and fitted a Schrader (bike tire) valve so I could repressurize it. I filled it with kerosene and 3D printed a wick holder for the front, holding a wick dipped in kerosene to light the stream as it leaves the nozzle." },
