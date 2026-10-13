@@ -201,7 +201,15 @@ window.SITE = {
         { src: "assets/projects/computer-dock-stand.png",           caption: "Laptop stand (CAD)",               w: 796, h: 550 },
         { src: "assets/projects/computer-dock-legion-toolpath.png", caption: "LegionStand, sliced for printing", w: 789, h: 843 }
       ] },
-    { hidden: true, id: "alarm",               title: "Alarm",               summary: "Description coming soon.", cover: "assets/projects/alarm-1.jpg", type: "", skills: "", year: "2022", sections: [], results: [], links: [],
+    { id: "alarm",               title: "Alarm",
+      summary: "A farm bell from the 1900s that I restored, fitted with a 3D-printed light and connected to a Wi-Fi plug so I can ring it from my phone.",
+      cover: "assets/projects/alarm-1.jpg", type: "Personal", skills: "Restoration, Electromechanical repair, 3D printing", year: "2022", results: [], links: [],
+      sections: [
+        { heading: "The find",        text: "This started as an old farm bell from the 1900s that I found and decided to bring back to working order." },
+        { heading: "Restoration",     text: "I sanded the whole bell down and repainted everything, then repaired the inside: the electromagnet and the bell mechanism that strikes the bells." },
+        { heading: "Adding a light",  text: "I added a light to the bottom of the bell, using a 3D-printed mount, a 3D-printed shroud, a bulb and a socket." },
+        { heading: "Ringing it from my phone", text: "I hooked it up to a Wi-Fi smart plug, so I can trigger the bell from my phone." }
+      ],
       gallery: [
         { video: "assets/projects/alarm-bell.mp4", poster: "assets/projects/alarm-bell-poster.jpg", caption: "Ringing (sound on)", w: 720, h: 1280 },
         { src: "assets/projects/alarm-1.jpg", w: 1200, h: 1600 },
