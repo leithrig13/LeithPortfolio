@@ -193,8 +193,20 @@ window.SITE = {
         { src: "assets/projects/high-speed-auv-side.png",  caption: "Side view",      w: 1717, h: 622 },
         { src: "assets/projects/high-speed-auv-front.png", caption: "End view",       w: 807,  h: 553 }
       ] },
-    { hidden: true, id: "night-vision-goggles", title: "Night Vision Goggles", summary: "Description coming soon.", cover: "", type: "", skills: "CAD, Product design", year: "2024", sections: [], results: [], links: [],
-      gallery: [{ src: "assets/projects/night-vision-goggles-cad.png", caption: "CAD model", w: 922, h: 1042 }] },
+    { id: "night-vision-handheld", title: "Night Vision Handheld",
+      summary: "A DIY handheld night-vision device built from 3D-printed parts, a salvaged security camera, a backup camera screen and a DeWalt battery.",
+      cover: "assets/projects/night-vision-handheld-side.jpg", type: "R&D", skills: "CAD, 3D printing, Electronics", year: "2023", results: [], links: [],
+      sections: [
+        { heading: "The build",  text: "The body is 3D printed. The camera and infrared (IR) LED arrays are re-used from a security camera, and a backup camera screen serves as the display." },
+        { heading: "Power",      text: "It runs on a 12 V DeWalt battery, which clips onto a 3D-printed adapter at the base of the grip." },
+        { heading: "Two IR modes", text: "In normal mode only one IR array is on. Holding down a push button turns on the second array for extra light, and it switches off again when the button is released." }
+      ],
+      gallery: [
+        { src: "assets/projects/night-vision-handheld-side.jpg",   caption: "Side view",       w: 1200, h: 1600 },
+        { src: "assets/projects/night-vision-handheld-front.jpg",  caption: "Normal mode, one IR array on", w: 1200, h: 1600 },
+        { src: "assets/projects/night-vision-handheld-screen.jpg", caption: "Backup camera screen", w: 1200, h: 1600 },
+        { src: "assets/projects/night-vision-handheld-cad.png",    caption: "CAD model",       w: 922,  h: 1042 }
+      ] },
     { hidden: true, id: "potato-cannon",       title: "Potato Cannon",       summary: "Description coming soon.", cover: "", type: "", skills: "", year: "2019", sections: [], results: [], gallery: [], links: [] },
     { hidden: true, id: "computer-dock",       title: "Computer Dock",       summary: "Description coming soon.", cover: "assets/projects/computer-dock-stand.png", type: "", skills: "CAD, 3D printing", year: "2024", sections: [], results: [], links: [],
       gallery: [
